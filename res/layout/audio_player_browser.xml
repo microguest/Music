@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@drawable/apollo_song_play_bg">
+
+    <include layout="@layout/virtual_action_bar"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/play_page_title_layout_height"
+                android:orientation="vertical"
+                android:gravity="center">
+
+            <TextView
+                    android:id="@+id/audio_player_track"
+                    style="@style/ShadowedText"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"/>
+            <View
+                    android:layout_width="@dimen/play_page_title_line_width"
+                    android:layout_height="@dimen/play_page_title_line_height"
+                    style="@style/ShadowedText"
+                    android:background="@color/play_page_title_line_color"
+                    android:layout_marginBottom="@dimen/play_page_title_line_marginBottom"/>
+
+            <TextView
+                    android:id="@+id/audio_player_album"
+                    style="@style/ShadowedText"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_small"
+                    android:lineSpacingMultiplier="0.8"/>
+
+            <TextView
+                    android:id="@+id/audio_player_artists"
+                    style="@style/ShadowedText"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_small"
+                    android:lineSpacingMultiplier="0.8"/>
+        </LinearLayout>
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:id="@+id/viewGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                </LinearLayout>
+
+                <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <include layout="@layout/audio_controls"/>
+
+</LinearLayout>
